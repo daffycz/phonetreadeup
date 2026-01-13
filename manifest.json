@@ -1,0 +1,9 @@
+{
+  "name": "PhoneTradeUp",
+  "short_name": "TradeUp",
+  "start_url": "/phonetreadeup/",
+  "display": "standalone",
+  "background_color": "#111827",
+  "theme_color": "#111827",
+  "icons": []
+}
