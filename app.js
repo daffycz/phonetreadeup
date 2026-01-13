@@ -190,4 +190,28 @@ function showBankDetails() {
     offerResultBox.appendChild(bankBox);
   }
 }
+/* -----------------------------
+   Admin-only Bank Details Box
+--------------------------------*/
+const bankAdminBox = document.getElementById("bank-admin-box");
+const saveBankBtn = document.getElementById("save-bank-details-btn");
+const bankInput = document.getElementById("bank-details-input");
+
+// Show admin box when you click "Admin"
+document.getElementById("open-admin-btn").addEventListener("click", () => {
+  const pin = prompt("Enter admin PIN:");
+  if (pin === "1234") {
+    bankAdminBox.classList.remove("hidden");
+    bankInput.value = bankDetails;
+  } else {
+    alert("Incorrect PIN");
+  }
+});
+
+// Save bank details
+saveBankBtn.addEventListener("click", () => {
+  bankDetails = bankInput.value;
+  localStorage.setItem("bankDetails", bankDetails);
+  alert("Bank details saved");
+});
 
