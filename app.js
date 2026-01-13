@@ -160,3 +160,34 @@ function renderModelsList() {
 }
 
 renderModelsList();
+/* -----------------------------
+   Bank Transfer Instructions
+--------------------------------*/
+let bankDetails = localStorage.getItem("bankDetails") || "";
+
+const offerResultBox = document.getElementById("offer-result");
+
+function showBankDetails() {
+  if (bankDetails) {
+    const bankBox = document.createElement("p");
+    bankBox.textContent = "Bank Transfer Instructions: " + bankDetails;
+    offerResultBox.appendChild(bankBox);
+  }
+}
+
+showBankDetails();
+/* -----------------------------
+   Bank Transfer Instructions
+--------------------------------*/
+let bankDetails = localStorage.getItem("bankDetails") || "";
+
+const offerResultBox = document.getElementById("offer-result");
+
+function showBankDetails() {
+  if (bankDetails) {
+    const bankBox = document.createElement("p");
+    bankBox.textContent = "Bank Transfer Instructions: " + bankDetails;
+    offerResultBox.appendChild(bankBox);
+  }
+}
+
