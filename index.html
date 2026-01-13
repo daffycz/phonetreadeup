@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PhoneTradeUp</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="theme-color" content="#111827" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>PhoneTradeUp</h1>
+    <button id="open-admin-btn" class="link-button">Admin</button>
+  </header>
+
+  <main class="app-main">
+    <section id="calculator-section">
+      <h2>Get Your Trade-In Offer</h2>
+
+      <label for="model-select" class="field-label">Phone model</label>
+      <select id="model-select" class="field-input"></select>
+
+      <label for="condition-select" class="field-label">Condition</label>
+      <select id="condition-select" class="field-input">
+        <option value="like-new">Like New (100%)</option>
+        <option value="good">Good (85%)</option>
+        <option value="fair">Fair (70%)</option>
+        <option value="poor">Poor (50%)</option>
+      </select>
+
+      <label for="notes-input" class="field-label">Notes (optional)</label>
+      <textarea id="notes-input" class="field-input" rows="2" placeholder="Cracked screen, battery issues, etc."></textarea>
+
+      <button id="calculate-btn" class="primary-button">Calculate Offer</button>
+
+      <div id="offer-result" class="card hidden">
+        <h3>Your Offer</h3>
+        <p id="offer-amount" class="offer-amount"></p>
+        <p id="offer-details" class="offer-details"></p>
+      </div>
+    </section>
+
+    <section id="admin-section" class="hidden">
+      <h2>Admin Panel</h2>
+
+      <div id="admin-login-card" class="card">
+        <h3>Enter Admin PIN</h3>
+        <input id="admin-pin-input" type="password" class="field-input" placeholder="Admin PIN" />
+        <button id="admin-login-btn" class="primary-button">Unlock</button>
+        <p class="helper-text">Default PIN: <strong>1234</strong></p>
+      </div>
+
+      <div id="admin-content" class="hidden">
+        <div class="card">
+          <h3>Security</h3>
+          <label for="new-pin-input" class="field-label">New Admin PIN</label>
+          <input id="new-pin-input" type="password" class="field-input" placeholder="New PIN" />
+          <button id="update-pin-btn" class="secondary-button">Update PIN</button>
+        </div>
+
+        <div class="card">
+          <h3>Phone Models & Base Prices</h3>
+
+          <div class="models-form">
+            <label for="model-name-input" class="field-label">Model name</label>
+            <input id="model-name-input" class="field-input" placeholder="e.g., iPhone 13 128GB" />
+
+            <label for="model-price-input" class="field-label">Base price</label>
+            <input id="model-price-input" type="number" class="field-input" placeholder="e.g., 500" />
+
+            <button id="add-model-btn" class="primary-button">Add / Update Model</button>
+          </div>
+
+          <ul id="models-list" class="models-list"></ul>
+        </div>
+
+        <button id="close-admin-btn" class="link-button">Close Admin</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>PhoneTradeUp · PWA</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
