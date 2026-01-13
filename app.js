@@ -82,29 +82,7 @@ calculateBtn.addEventListener("click", () => {
 /* -----------------------------
    Admin Panel
 --------------------------------*/
-openAdminBtn.addEventListener("click", () => {
-  calculatorSection.classList.add("hidden");
-  adminSection.classList.remove("hidden");
-});
 
-closeAdminBtn.addEventListener("click", () => {
-  adminSection.classList.add("hidden");
-  calculatorSection.classList.remove("hidden");
-  adminLoginCard.classList.remove("hidden");
-  adminContent.classList.add("hidden");
-});
-
-/* -----------------------------
-   Admin Login
---------------------------------*/
-adminLoginBtn.addEventListener("click", () => {
-  if (adminPinInput.value === adminPIN) {
-    adminLoginCard.classList.add("hidden");
-    adminContent.classList.remove("hidden");
-  } else {
-    alert("Incorrect PIN");
-  }
-});
 
 /* -----------------------------
    Update Admin PIN
@@ -175,7 +153,28 @@ function showBankDetails() {
   }
 }
 
-showBankDetails();
+
+}
+/* -----------------------------
+   Admin-only Bank Details Box
+--------------------------------*/
+const bankAdminBox = document.getElementById("bank-admin-box");
+const saveBankBtn = document.getElementById("save-bank-details-btn");
+const bankInput = document.getElementById("bank-details-input");
+
+// Show admin box when you click "Admin"
+document.getElementById("open-admin-btn").addEventListener("click", () => {
+  const pin = prompt("Enter admin PIN:");
+  if (pin === "1234") {
+    bankAdminBox.classList.remove("hidden");
+    bankInput.value = bankDetails;
+  } else {
+    alert("Incorrect PIN");
+  }
+});
+
+// 
+});
 /* -----------------------------
    Bank Transfer Instructions
 --------------------------------*/
@@ -190,6 +189,9 @@ function showBankDetails() {
     offerResultBox.appendChild(bankBox);
   }
 }
+
+
+
 /* -----------------------------
    Admin-only Bank Details Box
 --------------------------------*/
@@ -197,7 +199,7 @@ const bankAdminBox = document.getElementById("bank-admin-box");
 const saveBankBtn = document.getElementById("save-bank-details-btn");
 const bankInput = document.getElementById("bank-details-input");
 
-// Show admin box when you click "Admin"
+// Admin button → PIN popup
 document.getElementById("open-admin-btn").addEventListener("click", () => {
   const pin = prompt("Enter admin PIN:");
   if (pin === "1234") {
